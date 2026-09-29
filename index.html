@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,700;1,400;1,600&family=IBM+Plex+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<title>Marwan Ali Sabry — Portfolio</title>
+<style>
+  @page { size: A4; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root{
+    --ink:#1C2B2E;
+    --paper:#F6F4EE;
+    --panel:#ECE7D8;
+    --brass:#B9862F;
+    --brass-deep:#8F6620;
+    --teal:#1F6F63;
+    --muted:#5C6B66;
+    --line: rgba(28,43,46,0.16);
+    --cta-bg: #1C2B2E;
+    --cta-fg: #F6F4EE;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --ink:#EDEAE1;
+      --paper:#161D1E;
+      --panel:#232B2A;
+      --brass:#D9A44E;
+      --brass-deep:#E8B968;
+      --teal:#4FA595;
+      --muted:#9AA6A1;
+      --line: rgba(237,234,225,0.18);
+      --cta-bg:#0E1414;
+      --cta-fg:#EDEAE1;
+    }
+  }
+  :root[data-theme="dark"]{
+    --ink:#EDEAE1;
+    --paper:#161D1E;
+    --panel:#232B2A;
+    --brass:#D9A44E;
+    --brass-deep:#E8B968;
+    --teal:#4FA595;
+    --muted:#9AA6A1;
+    --line: rgba(237,234,225,0.18);
+    --cta-bg:#0E1414;
+    --cta-fg:#EDEAE1;
+  }
+  html { scroll-padding-top: env(safe-area-inset-top, 0px); }
+
+  html, body{
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'IBM Plex Sans', Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, .display{
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-weight: 700;
+    color: var(--ink);
+  }
+
+  .page{
+    width: 100%;
+    max-width: 210mm;
+    margin: 0 auto;
+    position: relative;
+    overflow: visible;
+    page-break-after: always;
+    padding: clamp(20px, 5vw, 20mm) clamp(16px, 5vw, 18mm) clamp(24px, 6vw, 16mm);
+    display:flex;
+    flex-direction:column;
+  }
+  .page:last-child{ page-break-after: auto; }
+
+  /* ---------- STYLES FOR THE PROFILE IMAGE (LIKE IMAGE 8) ---------- */
+  .profile-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 25px auto 15px auto;
+  }
+  
+  .profile-avatar {
+    width: 190px;
+    height: 190px;
+    border-radius: 50%;
+    padding: 4px; /* سمك الإطار المتدرج */
+    background: linear-gradient(135deg, var(--teal), var(--brass), var(--brass-deep));
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+  }
+
+  .profile-avatar:hover {
+    transform: scale(1.03);
+  }
+
+  .profile-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 50%;
+    display: block;
+    background: var(--panel);
+  }
+
+  /* ---------- shared bits ---------- */
+  .rule{ height:2px; background: var(--brass); width: 42px; }
+  .rule.wide{ width: 84px; }
+  .rule.thin{ height:1px; background: var(--line); width: 100%; }
+
+  .kicker{
+    font-family:'IBM Plex Sans', Arial, sans-serif;
+    font-size: 10.2px;
+    color: var(--teal);
+    letter-spacing: 0.02em;
+    font-weight: 700;
+  }
+
+  .running-header{
+    display:flex; justify-content:space-between; align-items:baseline;
+    flex-wrap: wrap; gap: 6px 14px;
+    font-size: 10px; color: var(--muted);
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 8px;
+    margin-bottom: 22px;
+  }
+  .running-header .name{ font-weight:700; color: var(--ink); }
+
+  .page-footer{
+    display:flex; justify-content:space-between; align-items:center;
+    flex-wrap: wrap; gap: 6px 14px;
+    font-size: 9.6px; color: var(--muted);
+    border-top: 1px solid var(--line);
+    margin-top: auto;
+    padding-top: 20px;
+  }
+
+  .tag{
+    display:inline-block;
+    font-size: 9.6px;
+    font-weight: 700;
+    color: var(--teal);
+    border: 1px solid var(--teal);
+    border-radius: 3px;
+    padding: 3px 8px;
+    margin: 0 6px 6px 0;
+  }
+
+  /* ================= PAGE 1 — COVER ================= */
+  #cover{
+    display:flex;
+    flex-direction:column;
+    justify-content: space-between;
+  }
+  #cover .top{ margin-top: 10mm; }
+  #cover .brand-mark{
+    display:flex; align-items:center; gap:10px; margin-bottom: 10mm;
+  }
+  #cover .brand-mark .dot{
+    width:10px; height:10px; background: var(--brass); border-radius:50%;
+  }
+  #cover .brand-mark span{
+    font-size: 11px; letter-spacing: 0.02em; color: var(--muted); font-weight:700;
+  }
+
+  #cover h1{
+    font-size: 40px;
+    line-height: 1.1;
+    text-align: center;
+  }
+  #cover .role{
+    font-family:'Source Serif 4', Georgia, serif;
+    font-style: italic;
+    font-size: 17px;
+    color: var(--teal);
+    margin-top: 10px;
+    text-align: center;
+  }
+  #cover .tagline{
+    margin: 18px auto 0 auto;
+    font-size: 13.5px;
+    color: var(--ink);
+    max-width: 140mm;
+    line-height: 1.65;
+    text-align: center;
+  }
+
+  #cover .strip{
+    margin-top: 15mm;
+    display:flex;
+    gap: 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  #cover .strip .cell{
+    flex:1;
+    padding: 12px 14px;
+    border-right: 1px solid var(--line);
+  }
+  #cover .strip .cell:last-child{ border-right:none; }
+  #cover .strip .cell .k{ font-size: 8.6px; color: var(--muted); font-weight:700; margin-bottom:4px; }
+  #cover .strip .cell .v{ font-size: 11.6px; font-weight:700; }
+
+  #cover .bottom{
+    display:flex; justify-content:space-between; align-items:flex-end;
+    margin-top: 20px;
+  }
+  #cover .contact-block .row{ font-size: 11.5px; margin-bottom: 5px; }
+  #cover .contact-block .row b{ color: var(--brass-deep); font-weight:700; }
+
+  @media (max-width: 640px){
+    .page{ padding-left: 20px; padding-right: 20px; }
+    #cover .strip{ flex-direction: column; }
+    #cover .strip .cell{ border-right:none; border-bottom:1px solid var(--line); }
+    #cover .strip .cell:last-child{ border-bottom:none; }
+    #cover .bottom{ flex-direction: column; align-items:flex-start; gap: 16px; }
+    #cover h1{ font-size: 32px; }
+    .profile-avatar { width: 160px; height: 160px; }
+  }
+</style>
+</head>
+<body>
+
+  <!-- ============ PAGE 1: COVER ============ -->
+  <section class="page" id="cover">
+    <div class="top">
+      <div class="brand-mark"><div class="dot"></div><span>PORTFOLIO</span></div>
+      
+      <!-- Profile Picture Section (Circular Avatar like Image) -->
+      <div class="profile-image-container">
+        <div class="profile-avatar">
+          <!-- ضع رابط صورتك مكان YOUR_IMAGE_URL هنا -->
+          <img src="YOUR_IMAGE_URL" alt="Marwan Ali Sabry">
+        </div>
+      </div>
+
+      <h1>Marwan Ali Sabry</h1>
+      <div class="role">Python Automation for Businesses Built on Manual Work</div>
+      
+      <p class="tagline">
+        I help small businesses and manual-labor business owners save time and money by automating the repetitive tasks that quietly eat their day.
+      </p>
+
+      <div class="strip">
+        <div class="cell">
+          <div class="k">FOCUS</div>
+          <div class="v">AI Automation</div>
+        </div>
+        <div class="cell">
+          <div class="k">CORE TOOLS</div>
+          <div class="v">Python • C++</div>
+        </div>
+        <div class="cell">
+          <div class="k">WORKING WITH</div>
+          <div class="v">Small & Manual Businesses</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bottom">
+      <div class="contact-block">
+        <div class="row"><b>Email:</b> marwanali3578@gmail.com</div>
+        <div class="row"><b>Location:</b> Egypt</div>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
