@@ -3,13 +3,26 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,700;1,400;1,600&family=IBM+Plex+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
 <title>Marwan Ali Sabry — Portfolio</title>
+
 <style>
-  @page { size: A4; margin: 0; }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  @page {
+    size: A4;
+    margin: 0;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
 
   :root{
     --ink:#1C2B2E;
@@ -22,6 +35,7 @@
     --line: rgba(28,43,46,0.16);
     --cta-bg: #1C2B2E;
     --cta-fg: #F6F4EE;
+
     padding-top: env(safe-area-inset-top, 0px);
     padding-bottom: env(safe-area-inset-bottom, 0px);
   }
@@ -56,10 +70,10 @@
 
   html {
     scroll-padding-top: env(safe-area-inset-top, 0px);
-    scroll-behavior: smooth;
   }
 
-  html, body{
+  html,
+  body{
     background: var(--paper);
     color: var(--ink);
     font-family: 'IBM Plex Sans', Arial, sans-serif;
@@ -69,7 +83,10 @@
     overflow-x: hidden;
   }
 
-  h1, h2, h3, .display{
+  h1,
+  h2,
+  h3,
+  .display{
     font-family: 'Source Serif 4', Georgia, serif;
     font-weight: 700;
     color: var(--ink);
@@ -82,89 +99,104 @@
     position: relative;
     overflow: visible;
     page-break-after: always;
-    padding: clamp(20px, 5vw, 20mm) clamp(16px, 5vw, 18mm) clamp(24px, 6vw, 16mm);
+
+    padding:
+      clamp(20px, 5vw, 20mm)
+      clamp(16px, 5vw, 18mm)
+      clamp(24px, 6vw, 16mm);
+
     display:flex;
     flex-direction:column;
-    border-bottom: 1px solid var(--line);
   }
 
   .page:last-child{
     page-break-after: auto;
-    border-bottom: none;
   }
+
+  @media print{
+    .page{
+      min-height: 297mm;
+    }
+  }
+
+  /* ---------- shared bits ---------- */
 
   .rule{
     height:2px;
     background: var(--brass);
-    width: 42px;
-    margin: 12px 0;
+    width:42px;
   }
 
   .rule.wide{
-    width: 84px;
+    width:84px;
   }
 
   .rule.thin{
     height:1px;
-    background: var(--line);
-    width: 100%;
-    margin: 16px 0;
+    background:var(--line);
+    width:100%;
   }
 
   .kicker{
     font-family:'IBM Plex Sans', Arial, sans-serif;
-    font-size: 10.2px;
-    color: var(--teal);
-    letter-spacing: 0.08em;
-    font-weight: 700;
-    text-transform: uppercase;
+    font-size:10.2px;
+    color:var(--teal);
+    letter-spacing:0.02em;
+    font-weight:700;
   }
 
   .running-header{
     display:flex;
     justify-content:space-between;
     align-items:baseline;
-    flex-wrap: wrap;
-    gap: 6px 14px;
-    font-size: 10px;
-    color: var(--muted);
-    border-bottom: 1px solid var(--line);
-    padding-bottom: 8px;
-    margin-bottom: 22px;
+    flex-wrap:wrap;
+    gap:6px 14px;
+
+    font-size:10px;
+    color:var(--muted);
+
+    border-bottom:1px solid var(--line);
+    padding-bottom:8px;
+    margin-bottom:22px;
   }
 
   .running-header .name{
     font-weight:700;
-    color: var(--ink);
+    color:var(--ink);
   }
 
   .page-footer{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    flex-wrap: wrap;
-    gap: 6px 14px;
-    font-size: 9.6px;
-    color: var(--muted);
-    border-top: 1px solid var(--line);
-    margin-top: 30px;
-    padding-top: 16px;
+    flex-wrap:wrap;
+    gap:6px 14px;
+
+    font-size:9.6px;
+    color:var(--muted);
+
+    border-top:1px solid var(--line);
+    margin-top:auto;
+    padding-top:20px;
   }
 
   .tag{
     display:inline-block;
-    font-size: 9.6px;
-    font-weight: 700;
-    color: var(--teal);
-    border: 1px solid var(--teal);
-    border-radius: 3px;
-    padding: 3px 8px;
-    margin: 0 6px 6px 0;
+
+    font-size:9.6px;
+    font-weight:700;
+
+    color:var(--teal);
+    border:1px solid var(--teal);
+    border-radius:3px;
+
+    padding:3px 8px;
+    margin:0 6px 6px 0;
   }
 
   .tag.brass{
-    color: var(--brass-deep);
-    border-color: var(--brass);
+    color:var(--brass-deep);
+    border-color:var(--brass);
   }
 
   ul.plain{
@@ -172,8 +204,8 @@
   }
 
   ul.plain li{
-    margin-bottom: 9px;
-    padding-left: 16px;
+    margin-bottom:9px;
+    padding-left:16px;
     position:relative;
   }
 
@@ -181,101 +213,81 @@
     content:"–";
     position:absolute;
     left:0;
-    color: var(--brass-deep);
+    color:var(--brass-deep);
     font-weight:700;
   }
+
 
   /* ================= PAGE 1 — COVER ================= */
 
   #cover{
     display:flex;
     flex-direction:column;
-    justify-content: space-between;
-    min-height: 100vh;
+    justify-content:space-between;
   }
 
   #cover .top{
-    margin-top: 10mm;
+    margin-top:30mm;
   }
 
   #cover .brand-mark{
     display:flex;
     align-items:center;
     gap:10px;
-    margin-bottom: 15mm;
+    margin-bottom:26mm;
   }
 
   #cover .brand-mark .dot{
     width:10px;
     height:10px;
-    background: var(--brass);
+    background:var(--brass);
     border-radius:50%;
   }
 
   #cover .brand-mark span{
-    font-size: 11px;
-    letter-spacing: 0.08em;
-    color: var(--muted);
+    font-size:11px;
+    letter-spacing:0.02em;
+    color:var(--muted);
     font-weight:700;
   }
 
-  .profile-avatar-container {
-    margin-bottom: 20px;
-  }
-
-  .profile-avatar {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    padding: 4px;
-    background: linear-gradient(135deg, var(--brass), var(--teal));
-    display: inline-block;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
-  }
-
-  .profile-avatar img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 50%;
-    display: block;
-  }
-
   #cover h1{
-    font-size: 40px;
-    line-height: 1.1;
-    max-width: 150mm;
+    font-size:44px;
+    line-height:1.08;
+    max-width:150mm;
   }
 
   #cover .role{
     font-family:'Source Serif 4', Georgia, serif;
-    font-style: italic;
-    font-size: 18px;
-    color: var(--teal);
-    margin-top: 10px;
-    max-width: 140mm;
+    font-style:italic;
+    font-size:17px;
+    color:var(--teal);
+    margin-top:10px;
+    max-width:140mm;
   }
 
   #cover .tagline{
-    margin-top: 18px;
-    font-size: 14px;
-    color: var(--ink);
-    max-width: 130mm;
-    line-height: 1.65;
+    margin-top:22px;
+    font-size:13.5px;
+    color:var(--ink);
+    max-width:118mm;
+    line-height:1.65;
   }
 
   #cover .strip{
-    margin-top: 12mm;
+    margin-top:20mm;
+
     display:flex;
-    gap: 0;
-    border-top: 1px solid var(--line);
-    border-bottom: 1px solid var(--line);
+    gap:0;
+
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
   }
 
   #cover .strip .cell{
     flex:1;
-    padding: 12px 14px;
-    border-right: 1px solid var(--line);
+    padding:12px 14px;
+    border-right:1px solid var(--line);
   }
 
   #cover .strip .cell:last-child{
@@ -283,67 +295,171 @@
   }
 
   #cover .strip .cell .k{
-    font-size: 8.6px;
-    color: var(--muted);
+    font-size:8.6px;
+    color:var(--muted);
     font-weight:700;
     margin-bottom:4px;
-    text-transform:uppercase;
   }
 
   #cover .strip .cell .v{
-    font-size: 11.6px;
+    font-size:11.6px;
     font-weight:700;
+  }
+
+  .hero-flow{
+    margin-top:34mm;
+  }
+
+  .hf-label{
+    font-size:9px;
+    font-weight:700;
+    color:var(--muted);
+    margin-bottom:14px;
+  }
+
+  .hf-row{
+    display:flex;
+    align-items:center;
+    gap:20px;
+  }
+
+  .hf-many{
+    display:flex;
+    align-items:center;
+    gap:7px;
+    position:relative;
+    padding-bottom:20px;
+  }
+
+  .hf-dot{
+    width:13px;
+    height:13px;
+    border-radius:50%;
+    border:1.6px solid var(--ink);
+    background:transparent;
+  }
+
+  .hf-dot.solid{
+    background:var(--teal);
+    border-color:var(--teal);
+  }
+
+  .hf-one{
+    display:flex;
+    align-items:center;
+    gap:7px;
+    position:relative;
+    padding-bottom:20px;
+  }
+
+  .hf-arrow{
+    font-size:20px;
+    color:var(--brass);
+    margin-bottom:20px;
+  }
+
+  .hf-cap{
+    position:absolute;
+    left:0;
+    bottom:0;
+    font-size:9px;
+    color:var(--muted);
+    white-space:nowrap;
   }
 
   #cover .bottom{
     display:flex;
     justify-content:space-between;
     align-items:flex-end;
-    margin-top: 20mm;
   }
 
   #cover .contact-block .row{
-    font-size: 11.5px;
-    margin-bottom: 5px;
+    font-size:11.5px;
+    margin-bottom:5px;
   }
 
   #cover .contact-block .row b{
-    color: var(--brass-deep);
+    color:var(--brass-deep);
     font-weight:700;
   }
 
   #cover .depi{
     text-align:right;
-    font-size: 9.4px;
-    color: var(--muted);
-    max-width: 60mm;
+    font-size:9.4px;
+    color:var(--muted);
+    max-width:60mm;
     line-height:1.5;
   }
+
 
   /* ================= PAGE 2 — ABOUT ================= */
 
   #about h2{
-    font-size: 27px;
-    margin-top: 6px;
+    font-size:27px;
+    margin-top:10px;
   }
 
   .about-head{
     display:flex;
-    flex-direction:column;
-    gap: 4px;
+    align-items:center;
+    gap:18px;
+    flex-wrap:wrap;
+  }
+
+  /*
+    PROFILE PHOTO
+    Put 1000877019.jpg in the same folder
+    as this HTML file.
+  */
+
+  .headshot{
+    width:92px;
+    height:92px;
+    flex:none;
+
+    border-radius:50%;
+    border:3px solid var(--brass);
+
+    padding:3px;
+    overflow:hidden;
+
+    background:var(--paper);
+
+    box-shadow:
+      0 0 0 2px rgba(31,111,99,0.25);
+  }
+
+  .headshot img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    /*
+      Change this value if you want
+      to move the photo up/down.
+    */
+    object-position:center 20%;
+
+    border-radius:50%;
+    display:block;
+  }
+
+  .about-head h2{
+    margin-top:0;
   }
 
   #about .lead{
-    margin-top: 16px;
-    font-size: 13.5px;
-    max-width: 150mm;
-    line-height: 1.75;
+    margin-top:16px;
+    font-size:13.2px;
+    max-width:150mm;
+    line-height:1.75;
   }
 
   #about .grid2{
-    margin-top: 22px;
+    margin-top:22px;
     display:flex;
-    gap: 16mm;
+    gap:16mm;
   }
 
   #about .grid2 .col{
@@ -351,43 +467,42 @@
   }
 
   #about .grid2 .label{
-    font-size: 9.4px;
+    font-size:9.4px;
     font-weight:700;
-    color: var(--teal);
-    margin-bottom: 6px;
-    text-transform: uppercase;
+    color:var(--teal);
+    margin-bottom:6px;
   }
 
   #about .grid2 .body{
-    font-size: 12px;
+    font-size:12px;
   }
 
   #about .grid2 .body .sub{
-    color: var(--muted);
-    font-size: 11px;
+    color:var(--muted);
+    font-size:11px;
     margin-top:2px;
   }
 
   #about .how{
-    margin-top: 26px;
+    margin-top:26px;
   }
 
   #about .how h3{
-    font-size: 15px;
-    margin-bottom: 14px;
+    font-size:13.5px;
+    margin-bottom:12px;
   }
 
   #about .how .item{
     display:flex;
-    gap: 12px;
-    margin-bottom: 14px;
+    gap:12px;
+    margin-bottom:14px;
     align-items:flex-start;
   }
 
   #about .how .item .stub{
-    width: 6px;
+    width:6px;
     align-self:stretch;
-    background: var(--panel);
+    background:var(--panel);
     position:relative;
     flex:none;
   }
@@ -399,56 +514,59 @@
     top:2px;
     bottom:2px;
     width:100%;
-    background: var(--brass);
+    background:var(--brass);
   }
 
   #about .how .item .txt b{
     font-family:'Source Serif 4', Georgia, serif;
-    font-size: 13px;
   }
 
   #about .how .item .txt{
-    font-size: 12px;
+    font-size:12px;
   }
 
   #about .pull{
-    margin-top: 34px;
-    padding-top: 22px;
-    border-top: 1px solid var(--line);
+    margin-top:34px;
+    padding-top:22px;
+
+    border-top:1px solid var(--line);
+
     display:flex;
-    gap: 14px;
+    gap:14px;
     align-items:flex-start;
-    max-width: 145mm;
+
+    max-width:145mm;
   }
 
   #about .pull .pq{
     font-family:'Source Serif 4', Georgia, serif;
-    font-size: 46px;
-    color: var(--brass);
-    line-height: 1;
+    font-size:46px;
+    color:var(--brass);
+    line-height:1;
     flex:none;
-    margin-top: -6px;
+    margin-top:-6px;
   }
 
   #about .pull p{
     font-family:'Source Serif 4', Georgia, serif;
-    font-style: italic;
-    font-size: 15px;
-    line-height: 1.6;
-    color: var(--ink);
+    font-style:italic;
+    font-size:15.5px;
+    line-height:1.6;
+    color:var(--ink);
   }
+
 
   /* ================= PAGE 3 — SKILLS & SERVICES ================= */
 
   #skills h2{
-    font-size: 27px;
-    margin-top: 10px;
+    font-size:27px;
+    margin-top:10px;
   }
 
   #skills .cols{
     display:flex;
-    gap: 16mm;
-    margin-top: 22px;
+    gap:16mm;
+    margin-top:22px;
   }
 
   #skills .cols .col{
@@ -456,133 +574,135 @@
   }
 
   #skills .colhead{
-    font-size: 9.4px;
+    font-size:9.4px;
     font-weight:700;
-    color: var(--teal);
-    margin-bottom: 12px;
-    text-transform: uppercase;
+    color:var(--teal);
+    margin-bottom:12px;
   }
 
   .skillrow{
-    padding: 11px 0;
-    border-bottom: 1px solid var(--line);
+    padding:11px 0;
+    border-bottom:1px solid var(--line);
   }
 
   .skillrow:first-child{
-    border-top: 1px solid var(--line);
+    border-top:1px solid var(--line);
   }
 
   .skillrow .name{
     font-weight:700;
-    font-size: 12.4px;
+    font-size:12.4px;
   }
 
   .skillrow .desc{
-    font-size: 11px;
-    color: var(--muted);
-    margin-top: 3px;
+    font-size:11px;
+    color:var(--muted);
+    margin-top:3px;
+  }
+
+  .skillrow .badge{
+    font-size:8.8px;
+    color:var(--brass-deep);
+    font-weight:700;
   }
 
   .servicecard{
-    padding: 13px 0;
-    border-bottom: 1px solid var(--line);
+    padding:13px 0;
+    border-bottom:1px solid var(--line);
   }
 
   .servicecard:first-child{
-    border-top: 1px solid var(--line);
+    border-top:1px solid var(--line);
   }
 
   .servicecard .name{
     font-family:'Source Serif 4', Georgia, serif;
     font-weight:700;
-    font-size: 13.8px;
+    font-size:13.8px;
   }
 
   .servicecard .desc{
-    font-size: 11.4px;
-    margin-top: 5px;
-    color: var(--ink);
+    font-size:11.4px;
+    margin-top:5px;
+    color:var(--ink);
   }
 
   #skills .target{
-    margin-top: 24px;
-    background: var(--panel);
-    padding: 14px 16px;
-    border-left: 3px solid var(--brass);
+    margin-top:24px;
+    background:var(--panel);
+    padding:14px 16px;
+    border-left:3px solid var(--brass);
   }
 
   #skills .target .k{
     font-size:9px;
     font-weight:700;
-    color: var(--teal);
+    color:var(--teal);
     margin-bottom:5px;
-    text-transform: uppercase;
   }
 
   #skills .target .v{
-    font-size: 12px;
+    font-size:12px;
   }
 
   #skills .heuristic{
-    margin-top: 30px;
-    padding-top: 20px;
-    border-top: 1px solid var(--line);
-    max-width: 150mm;
+    margin-top:30px;
+    padding-top:20px;
+    border-top:1px solid var(--line);
+    max-width:150mm;
   }
 
   #skills .heuristic .label{
-    font-size: 9.4px;
+    font-size:9.4px;
     font-weight:700;
-    color: var(--brass-deep);
-    margin-bottom: 8px;
-    text-transform: uppercase;
+    color:var(--brass-deep);
+    margin-bottom:8px;
   }
 
   #skills .heuristic p{
     font-family:'Source Serif 4', Georgia, serif;
-    font-style: italic;
-    font-size: 14px;
-    line-height: 1.7;
-    color: var(--ink);
+    font-style:italic;
+    font-size:14px;
+    line-height:1.7;
+    color:var(--ink);
   }
+
 
   /* ================= PAGE 4 — PROJECT ================= */
 
   #project h2{
-    font-size: 24px;
-    margin-top: 10px;
+    font-size:24px;
+    margin-top:10px;
   }
 
   #project .ptitle{
-    font-size: 16px;
-    margin-top: 4px;
-    color: var(--brass-deep);
-    font-weight: 600;
+    font-size:16px;
+    margin-top:4px;
+    color:var(--brass-deep);
   }
 
   #project .block{
-    margin-top: 18px;
+    margin-top:18px;
   }
 
   #project .block .k{
-    font-size: 9.4px;
+    font-size:9.4px;
     font-weight:700;
-    color: var(--teal);
-    margin-bottom: 6px;
-    text-transform: uppercase;
+    color:var(--teal);
+    margin-bottom:6px;
   }
 
   #project .block .v{
-    font-size: 12px;
-    max-width: 155mm;
+    font-size:12px;
+    max-width:155mm;
     line-height:1.65;
   }
 
   .flow{
-    margin-top: 14px;
+    margin-top:10px;
     display:flex;
     align-items:stretch;
-    gap: 6px;
+    gap:6px;
   }
 
   .flow-col{
@@ -590,125 +710,141 @@
   }
 
   .flow-col .flabel{
-    font-size: 9px;
+    font-size:9px;
     font-weight:700;
-    color: var(--muted);
-    margin-bottom: 8px;
-    text-transform: uppercase;
+    color:var(--muted);
+    margin-bottom:8px;
   }
 
   .flow-steps{
     display:flex;
     flex-direction:column;
-    gap: 6px;
+    gap:5px;
   }
 
   .flow-step{
-    border: 1px solid var(--line);
-    padding: 8px 10px;
-    font-size: 10.5px;
-    background: var(--panel);
-    color: var(--ink);
-    border-radius: 4px;
+    border:1px solid var(--line);
+    padding:7px 9px;
+    font-size:10.2px;
+    background:var(--panel);
+    color:var(--ink);
   }
 
   .flow-step.win{
-    border-color: var(--teal);
+    border-color:var(--teal);
     font-weight:700;
-    color: var(--teal);
-    background: var(--panel);
+    color:var(--teal);
+    background:var(--panel);
+  }
+
+  .flow-arrow{
+    text-align:center;
+    font-size:14px;
+    color:var(--brass);
+    padding:6px 2px;
+  }
+
+  .flow-divider{
+    width:1px;
+    background:var(--line);
+    margin:0 4px;
   }
 
   .toolrow{
-    margin-top: 16px;
+    margin-top:14px;
   }
 
   #project .next{
-    margin-top: 24px;
+    margin-top:20px;
   }
 
   #project .next h3{
-    font-size: 14px;
-    margin-bottom: 12px;
+    font-size:12.5px;
+    margin-bottom:10px;
   }
 
   #project .nextrow{
     display:flex;
-    gap: 14mm;
+    gap:14mm;
   }
 
   #project .nextitem{
     flex:1;
-    border-top: 2px solid var(--brass);
-    padding-top: 10px;
+    border-top:2px solid var(--brass);
+    padding-top:8px;
   }
 
   #project .nextitem .t{
     font-weight:700;
-    font-size: 11.6px;
+    font-size:11.6px;
   }
 
   #project .nextitem .s{
-    font-size: 10.4px;
-    color: var(--muted);
-    margin-top: 3px;
+    font-size:10.4px;
+    color:var(--muted);
+    margin-top:3px;
   }
+
+  #project .nextitem .st{
+    font-size:8.8px;
+    color:var(--brass-deep);
+    font-weight:700;
+    margin-top:5px;
+  }
+
 
   /* ================= PAGE 5 — CONTACT ================= */
 
   #contact{
     display:flex;
     flex-direction:column;
-    justify-content: space-between;
-    min-height: 80vh;
   }
 
   #contact .mid{
-    margin-top: 8mm;
+    margin-top:14mm;
   }
 
   #contact h2{
-    font-size: 30px;
-    max-width: 140mm;
+    font-size:30px;
+    max-width:140mm;
     line-height:1.15;
   }
 
   #contact .lead{
-    margin-top: 16px;
-    font-size: 13px;
-    max-width: 130mm;
-    line-height: 1.7;
+    margin-top:16px;
+    font-size:13px;
+    max-width:130mm;
+    line-height:1.7;
   }
 
   #contact .steps{
-    margin-top: 24px;
+    margin-top:30px;
   }
 
   #contact .steps .label{
-    font-size: 9.4px;
+    font-size:9.4px;
     font-weight:700;
-    color: var(--teal);
-    margin-bottom: 14px;
-    text-transform: uppercase;
+    color:var(--teal);
+    margin-bottom:14px;
   }
 
   #contact .steprow{
     display:flex;
-    gap: 12mm;
+    gap:12mm;
   }
 
   #contact .step{
     flex:1;
     display:flex;
-    gap: 10px;
+    gap:10px;
     align-items:flex-start;
   }
 
   #contact .sn{
     font-family:'Source Serif 4', Georgia, serif;
     font-weight:700;
-    font-size: 22px;
-    color: var(--brass);
+    font-size:20px;
+    color:var(--brass);
     flex:none;
     line-height:1;
   }
@@ -720,31 +856,45 @@
   }
 
   #contact .st b{
-    font-size: 12px;
+    font-size:12px;
   }
 
   #contact .st span{
-    font-size: 10.6px;
-    color: var(--muted);
+    font-size:10.6px;
+    color:var(--muted);
     line-height:1.5;
   }
 
+  #contact .why{
+    margin-top:30px;
+  }
+
+  #contact .why .label{
+    font-size:9.4px;
+    font-weight:700;
+    color:var(--teal);
+    margin-bottom:10px;
+  }
+
   #contact .cta-block{
-    margin-top: 30px;
-    background: var(--cta-bg);
-    color: var(--cta-fg);
-    padding: 22px 24px;
-    border-radius: 6px;
+    margin-top:auto;
+
+    background:var(--cta-bg);
+    color:var(--cta-fg);
+
+    padding:20px 22px;
+
     display:flex;
     justify-content:space-between;
     align-items:center;
-    flex-wrap: wrap;
-    gap: 14px;
+
+    flex-wrap:wrap;
+    gap:14px;
   }
 
   #contact .cta-block .row{
-    font-size: 12.5px;
-    margin-bottom: 6px;
+    font-size:12.5px;
+    margin-bottom:6px;
   }
 
   #contact .cta-block .row:last-child{
@@ -752,7 +902,7 @@
   }
 
   #contact .cta-block .row b{
-    color: var(--brass);
+    color:var(--brass);
   }
 
   #contact .cta-block .label2{
@@ -760,14 +910,18 @@
     font-size:15px;
   }
 
-  @media (max-width: 640px){
+
+  /* ================= MOBILE ================= */
+
+  @media (max-width:640px){
+
     .page{
-      padding-left: 20px;
-      padding-right: 20px;
+      padding-left:20px;
+      padding-right:20px;
     }
 
     #cover .strip{
-      flex-direction: column;
+      flex-direction:column;
     }
 
     #cover .strip .cell{
@@ -780,459 +934,723 @@
     }
 
     #cover .bottom{
-      flex-direction: column;
+      flex-direction:column;
       align-items:flex-start;
-      gap: 16px;
+      gap:16px;
     }
 
     #cover .depi{
       text-align:left;
-      max-width: 100%;
+      max-width:100%;
     }
 
     #cover h1{
-      font-size: 32px;
+      font-size:34px;
+    }
+
+    #about .about-head{
+      align-items:flex-start;
     }
 
     #about .grid2{
-      flex-direction: column;
-      gap: 18px;
+      flex-direction:column;
+      gap:18px;
     }
 
     #skills .cols{
-      flex-direction: column;
-      gap: 24px;
+      flex-direction:column;
+      gap:24px;
     }
 
     .flow{
-      flex-direction: column;
+      flex-direction:column;
+    }
+
+    .flow-divider{
+      display:none;
     }
 
     #project .nextrow{
-      flex-direction: column;
-      gap: 18px;
+      flex-direction:column;
+      gap:18px;
     }
 
     #contact .steprow{
-      flex-direction: column;
-      gap: 18px;
+      flex-direction:column;
+      gap:18px;
     }
+
   }
+
 </style>
 </head>
 
+
 <body>
 
-  <!-- ============ PAGE 1: COVER ============ -->
 
-  <section class="page" id="cover">
-    <div class="top">
+<!-- ========================================================= -->
+<!-- PAGE 1: COVER -->
+<!-- ========================================================= -->
 
-      <div class="brand-mark">
-        <div class="dot"></div>
-        <span>PORTFOLIO</span>
-      </div>
+<section class="page" id="cover">
 
-      <div class="profile-avatar-container">
-        <div class="profile-avatar">
-          <img src="IMG-20260510-WA0020.jpg" alt="Marwan Ali Sabry">
-        </div>
-      </div>
+  <div class="top">
 
-      <h1>Marwan Ali Sabry</h1>
-
-      <div class="role">
-        Python Automation for Businesses Built on Manual Work
-      </div>
-
-      <p class="tagline">
-        I help small businesses and manual-labor business owners save time and money by automating the repetitive tasks that quietly eat their day.
-      </p>
-
-      <div class="strip">
-
-        <div class="cell">
-          <div class="k">FOCUS</div>
-          <div class="v">AI & Python Automation</div>
-        </div>
-
-        <div class="cell">
-          <div class="k">CORE TOOLS</div>
-          <div class="v">Python • C++</div>
-        </div>
-
-        <div class="cell">
-          <div class="k">WORKING WITH</div>
-          <div class="v">Small & Manual Businesses</div>
-        </div>
-
-      </div>
+    <div class="brand-mark">
+      <div class="dot"></div>
+      <span>PORTFOLIO</span>
     </div>
 
-    <div class="bottom">
+    <h1>Marwan&nbsp;Ali&nbsp;Sabry</h1>
 
-      <div class="contact-block">
-        <div class="row">
-          <b>Email:</b> marwanali3578@gmail.com
-        </div>
-
-        <div class="row">
-          <b>Location:</b> Egypt
-        </div>
-      </div>
-
-      <div class="depi">
-        Custom Solutions & Process Efficiency
-      </div>
-
-    </div>
-  </section>
-
-
-  <!-- ============ PAGE 2: ABOUT ============ -->
-
-  <section class="page" id="about">
-
-    <div class="running-header">
-      <span class="name">MARWAN ALI SABRY</span>
-      <span>ABOUT ME</span>
+    <div class="role">
+      Python Automation for Businesses Built on Manual Work
     </div>
 
-    <div class="about-head">
-
-      <div>
-        <span class="kicker">BACKGROUND & PHILOSOPHY</span>
-
-        <h2>
-          Bridge the Gap Between Manual Labor & Automation
-        </h2>
-      </div>
-
-    </div>
-
-    <p class="lead">
-      Many small businesses run on repetitive manual operations—copying data, managing inventory spreadsheets, sending routine client follow-ups, or parsing daily reports. My goal is to build tailor-made Python scripts that eliminate human error and free up valuable working hours.
+    <p class="tagline">
+      I help small businesses and manual-labor business owners save time and money by automating the repetitive tasks that quietly eat their day.
     </p>
 
-    <div class="grid2">
+    <div class="strip">
 
-      <div class="col">
-
-        <div class="label">
-          WHAT DRIVES ME
-        </div>
-
-        <div class="body">
-          Writing simple, reliable software that solves real-world bottlenecks. No unnecessary overhead—just lean Python scripts that work seamlessly.
-        </div>
-
+      <div class="cell">
+        <div class="k">FOCUS</div>
+        <div class="v">AI Automation</div>
       </div>
 
-      <div class="col">
+      <div class="cell">
+        <div class="k">CORE TOOLS</div>
+        <div class="v">Python · C++</div>
+      </div>
 
-        <div class="label">
-          MY METHODOLOGY
+      <div class="cell">
+        <div class="k">WORKING WITH</div>
+        <div class="v">Small &amp; manual-labor businesses</div>
+      </div>
+
+    </div>
+
+
+    <div class="hero-flow">
+
+      <div class="hf-label">
+        WHAT THIS LOOKS LIKE, IN PRACTICE
+      </div>
+
+      <div class="hf-row">
+
+        <div class="hf-many">
+
+          <div class="hf-dot"></div>
+          <div class="hf-dot"></div>
+          <div class="hf-dot"></div>
+          <div class="hf-dot"></div>
+          <div class="hf-dot"></div>
+
+          <span class="hf-cap">
+            five manual replies, every day
+          </span>
+
         </div>
 
-        <div class="body">
-          Understand the exact manual workflow, map out data flow, build robust automation scripts, and test rigorously to ensure 100% precision.
+        <div class="hf-arrow">
+          →
+        </div>
+
+        <div class="hf-one">
+
+          <div class="hf-dot solid"></div>
+
+          <span class="hf-cap">
+            one script, running on its own
+          </span>
+
         </div>
 
       </div>
 
     </div>
 
-    <div class="how">
+  </div>
 
-      <h3>
-        How I Help Your Business
-      </h3>
 
-      <div class="item">
+  <div class="bottom">
 
-        <div class="stub"></div>
+    <div class="contact-block">
 
-        <div class="txt">
-          <b>1. Process Audit:</b>
-          Identify repetitive tasks causing delays, data mistakes, or employee fatigue.
-        </div>
-
+      <div class="row">
+        <b>Email&nbsp;</b>marwan.elbaz10@gmail.com
       </div>
 
-      <div class="item">
-
-        <div class="stub"></div>
-
-        <div class="txt">
-          <b>2. Custom Python Automation:</b>
-          Build customized tools for web scraping, file manipulation, automated emails, and database synchronization.
-        </div>
-
+      <div class="row">
+        <b>Phone&nbsp;</b>01065073310
       </div>
 
-      <div class="item">
-
-        <div class="stub"></div>
-
-        <div class="txt">
-          <b>3. Seamless Integration:</b>
-          Deliver easy-to-use scripts or command-line tools requiring zero technical knowledge from your team.
-        </div>
-
+      <div class="row">
+        <b>LinkedIn&nbsp;</b>linkedin.com/in/marwan-ali-b77363386
       </div>
 
     </div>
 
-    <div class="pull">
 
-      <div class="pq">
-        “
-      </div>
+    <div class="depi">
 
-      <p>
-        Automation isn't about replacing human effort—it's about removing the mundane so people can focus on actual growth.
-      </p>
+      Faculty of Computers &amp; Information, Mansoura University<br>
+
+      AI Automation Track — Digital Egypt Pioneers Initiative (DEPI)
 
     </div>
 
-    <div class="page-footer">
-      <span>Marwan Ali Sabry — Portfolio</span>
-      <span>Page 02</span>
-    </div>
+  </div>
 
-  </section>
+</section>
 
 
-  <!-- ============ PAGE 3: SKILLS & SERVICES ============ -->
 
-  <section class="page" id="skills">
+<!-- ========================================================= -->
+<!-- PAGE 2: ABOUT -->
+<!-- ========================================================= -->
 
-    <div class="running-header">
-      <span class="name">MARWAN ALI SABRY</span>
-      <span>SKILLS & SERVICES</span>
-    </div>
+<section class="page" id="about">
 
-    <span class="kicker">
-      CAPABILITIES
+  <div class="running-header">
+
+    <span class="name">
+      Marwan Ali Sabry
     </span>
 
-    <h2>
-      Technical Arsenal & Core Services
-    </h2>
+    <span>
+      About
+    </span>
 
-    <div class="cols">
-
-      <div class="col">
-
-        <div class="colhead">
-          TECHNICAL SKILLS
-        </div>
-
-        <div class="skillrow">
-
-          <div class="name">
-            Python Process Automation
-          </div>
-
-          <div class="desc">
-            Automating repetitive tasks, file processing, Excel/CSV manipulation, PDF generation, and workflow scripting.
-          </div>
-
-        </div>
-
-        <div class="skillrow">
-
-          <div class="name">
-            Web Scraping & Data Extraction
-          </div>
-
-          <div class="desc">
-            Extracting data from e-commerce sites, directories, and web portals into structured databases.
-          </div>
-
-        </div>
-
-        <div class="skillrow">
-
-          <div class="name">
-            C++ Development
-          </div>
-
-          <div class="desc">
-            Strong foundation in object-oriented programming, data structures, and memory-efficient algorithms.
-          </div>
-
-        </div>
-
-        <div class="skillrow">
-
-          <div class="name">
-            API & Database Integration
-          </div>
-
-          <div class="desc">
-            Connecting third-party APIs, webhooks, SQLite, and PostgreSQL to automate cross-platform workflows.
-          </div>
-
-        </div>
-
-      </div>
+  </div>
 
 
-      <div class="col">
+  <div class="kicker">
+    01 — ABOUT
+  </div>
 
-        <div class="colhead">
-          SERVICES OFFERED
-        </div>
 
-        <div class="servicecard">
+  <div class="about-head">
 
-          <div class="name">
-            Data Entry Automation
-          </div>
+    <!-- PROFILE PHOTO -->
 
-          <div class="desc">
-            Replacing manual copying across files, spreadsheets, or online forms with 100% accurate Python bots.
-          </div>
+    <div class="headshot">
 
-        </div>
-
-        <div class="servicecard">
-
-          <div class="name">
-            Custom Web Scrapers & Crawlers
-          </div>
-
-          <div class="desc">
-            Automated market research, competitor price tracking, and lead gathering scripts.
-          </div>
-
-        </div>
-
-        <div class="servicecard">
-
-          <div class="name">
-            Automated Reporting Tools
-          </div>
-
-          <div class="desc">
-            Generating daily/weekly business reports sent directly to email or messaging platforms.
-          </div>
-
-        </div>
-
-      </div>
+      <img
+        src="1000877019.jpg"
+        alt="Marwan Ali Sabry"
+      >
 
     </div>
 
 
-    <div class="target">
+    <div>
 
-      <div class="k">
-        IDEAL CLIENT PROFILE
-      </div>
+      <h2>
+        Why I automate manual work.
+      </h2>
 
-      <div class="v">
-        Small to medium business owners, workshops, logistics teams, and e-commerce stores looking to scale operations without increasing manual workforce.
-      </div>
+      <div
+        class="rule wide"
+        style="margin-top:10px;"
+      ></div>
 
     </div>
 
+  </div>
 
-    <div class="heuristic">
+
+  <p class="lead">
+
+    I'm a second-year Computer &amp; Information Sciences student at Mansoura University, currently training on the AI Automation track at Digital Egypt Pioneers Initiative (DEPI), where I'm building my skills in Python and C++. My focus is simple: most small businesses and manual-labor business owners lose hours every week to repetitive tasks — answering the same customer questions, entering the same data, compiling the same reports by hand. I build small, focused Python tools that take that work off their plate, so they can spend their time on the parts of the business that actually need them. I'm early in my journey, and I treat every project as a chance to build something a real business owner could use — not just a class exercise.
+
+  </p>
+
+
+  <div class="grid2">
+
+
+    <div class="col">
 
       <div class="label">
-        CORE PRINCIPLE
+        EDUCATION
       </div>
 
-      <p>
-        If a task takes more than 15 minutes a day and follows fixed rules, it can and should be automated with Python.
-      </p>
+      <div class="body">
 
-    </div>
+        B.Sc. Computer &amp; Information Sciences<br>
 
+        <span class="sub">
+          Mansoura University — 2nd Year
+        </span>
 
-    <div class="page-footer">
-      <span>Marwan Ali Sabry — Portfolio</span>
-      <span>Page 03</span>
-    </div>
-
-  </section>
-
-
-  <!-- ============ PAGE 4: PROJECT ============ -->
-
-  <section class="page" id="project">
-
-    <div class="running-header">
-      <span class="name">MARWAN ALI SABRY</span>
-      <span>FEATURED PROJECT</span>
-    </div>
-
-    <h2>
-      Featured Automation Project
-    </h2>
-
-    <div class="ptitle">
-      Business Process Automation System
-    </div>
-
-    <div class="block">
-
-      <div class="k">
-        PROJECT OVERVIEW
-      </div>
-
-      <div class="v">
-        A custom automation workflow designed to reduce repetitive manual operations, organize business data, and improve the speed and accuracy of everyday tasks.
       </div>
 
     </div>
 
-    <div class="block">
 
-      <div class="k">
-        PROBLEM
+    <div class="col">
+
+      <div class="label">
+        TRAINING PROGRAM
       </div>
 
-      <div class="v">
-        Employees spend valuable time copying information between files, checking data manually, and preparing repetitive reports.
+      <div class="body">
+
+        AI Automation Track<br>
+
+        <span class="sub">
+          Digital Egypt Pioneers Initiative (DEPI)
+        </span>
+
+      </div>
+
+    </div>
+
+
+    <div class="col">
+
+      <div class="label">
+        WHO I WORK WITH
+      </div>
+
+      <div class="body">
+
+        Small businesses &amp; manual-labor business owners<br>
+
+        <span class="sub">
+          Anyone repeating the same task, daily
+        </span>
+
       </div>
 
     </div>
 
-    <div class="block">
 
-      <div class="k">
-        SOLUTION
-      </div>
+  </div>
 
-      <div class="v">
-        A Python-based automation workflow handles data collection, processing, validation, and report generation automatically.
+
+  <div class="how">
+
+    <h3>
+      How I work
+    </h3>
+
+
+    <div class="item">
+
+      <div class="stub"></div>
+
+      <div class="txt">
+
+        <b>
+          Start with the bottleneck.
+        </b>
+
+        I ask what's actually eating your time before I write a line of code.
+
       </div>
 
     </div>
+
+
+    <div class="item">
+
+      <div class="stub"></div>
+
+      <div class="txt">
+
+        <b>
+          Keep it simple.
+        </b>
+
+        A script that gets used every day beats a complex system that doesn't.
+
+      </div>
+
+    </div>
+
+
+    <div class="item">
+
+      <div class="stub"></div>
+
+      <div class="txt">
+
+        <b>
+          Built to hand off.
+        </b>
+
+        Clear instructions, no black boxes — you understand what's running and why.
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div class="pull">
+
+    <div class="pq">
+      “
+    </div>
+
+    <p>
+
+      Most businesses don't need more software. They need the ten minutes a day they're losing to the same manual task, back.
+
+    </p>
+
+  </div>
+
+
+  <div class="page-footer">
+
+    <span>
+      Marwan Ali Sabry — Portfolio
+    </span>
+
+    <span>
+      02
+    </span>
+
+  </div>
+
+</section>
+
+
+
+<!-- ========================================================= -->
+<!-- PAGE 3: SKILLS & SERVICES -->
+<!-- ========================================================= -->
+
+<section class="page" id="skills">
+
+  <div class="running-header">
+
+    <span class="name">
+      Marwan Ali Sabry
+    </span>
+
+    <span>
+      Skills &amp; Services
+    </span>
+
+  </div>
+
+
+  <div class="kicker">
+    02 — SKILLS &amp; SERVICES
+  </div>
+
+
+  <h2>
+    What I bring, what I offer.
+  </h2>
+
+
+  <div
+    class="rule wide"
+    style="margin-top:10px;"
+  ></div>
+
+
+  <div class="cols">
+
+
+    <div class="col">
+
+      <div class="colhead">
+        SKILLS
+      </div>
+
+
+      <div class="skillrow">
+
+        <div class="name">
+          Python
+        </div>
+
+        <div class="desc">
+          Core language for automation scripts, logic, and file/data handling.
+        </div>
+
+      </div>
+
+
+      <div class="skillrow">
+
+        <div class="name">
+          C++
+        </div>
+
+        <div class="desc">
+          Programming fundamentals, logic-building, and problem-solving.
+        </div>
+
+      </div>
+
+
+      <div class="skillrow">
+
+        <div class="name">
+          Automation Logic
+        </div>
+
+        <div class="desc">
+          Breaking a manual, repeated process into clear, repeatable steps.
+        </div>
+
+      </div>
+
+
+      <div class="skillrow">
+
+        <div class="name">
+
+          Currently Building
+
+          <span class="badge">
+            IN PROGRESS
+          </span>
+
+        </div>
+
+        <div class="desc">
+          Excel/Sheets automation, API integrations, and expanding the Python toolkit.
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+    <div class="col">
+
+      <div class="colhead">
+        SERVICES
+      </div>
+
+
+      <div class="servicecard">
+
+        <div class="name">
+          Repetitive Task Automation
+        </div>
+
+        <div class="desc">
+          Python scripts that take over the manual, repeated parts of your workflow — data entry, file organization, basic reporting.
+        </div>
+
+      </div>
+
+
+      <div class="servicecard">
+
+        <div class="name">
+          Auto-Reply Systems
+        </div>
+
+        <div class="desc">
+          Bots that instantly answer common customer questions by chat or email, so nothing sits unanswered while you're busy.
+        </div>
+
+      </div>
+
+
+      <div class="servicecard">
+
+        <div class="name">
+          Data &amp; Reporting Scripts
+        </div>
+
+        <div class="desc">
+          Turning raw spreadsheets into clean, ready-to-read reports — no more manual copy-pasting between sheets.
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div class="target">
+
+    <div class="k">
+      WHO THIS IS FOR
+    </div>
+
+    <div class="v">
+
+      Shop owners, service providers, and small teams who do the same manual task — the same reply, the same entry, the same report — over and over, and would rather spend that time on the business itself.
+
+    </div>
+
+  </div>
+
+
+  <div class="heuristic">
+
+    <div class="label">
+      A QUICK WAY TO TELL
+    </div>
+
+    <p>
+
+      If you've done a task the same exact way more than twice this week — answered the same question, filled the same kind of sheet, copied the same numbers from one place to another — there's a decent chance it can run on its own instead of on your time.
+
+    </p>
+
+  </div>
+
+
+  <div class="page-footer">
+
+    <span>
+      Marwan Ali Sabry — Portfolio
+    </span>
+
+    <span>
+      03
+    </span>
+
+  </div>
+
+</section>
+
+
+
+<!-- ========================================================= -->
+<!-- PAGE 4: FEATURED PROJECT -->
+<!-- ========================================================= -->
+
+<section class="page" id="project">
+
+  <div class="running-header">
+
+    <span class="name">
+      Marwan Ali Sabry
+    </span>
+
+    <span>
+      Featured Project
+    </span>
+
+  </div>
+
+
+  <div class="kicker">
+    03 — FEATURED PROJECT
+  </div>
+
+
+  <h2>
+    Auto-Reply Bot
+  </h2>
+
+
+  <div class="ptitle">
+
+    Turning "the same five questions" into an instant reply
+
+  </div>
+
+
+  <div
+    class="rule wide"
+    style="margin-top:10px;"
+  ></div>
+
+
+  <div style="margin-top:14px;">
+
+    <span class="tag brass">
+      Python
+    </span>
+
+    <span class="tag">
+      Keyword-Matching Logic
+    </span>
+
+    <span class="tag">
+      Training Project
+    </span>
+
+  </div>
+
+
+  <div class="block">
+
+    <div class="k">
+      THE PROBLEM
+    </div>
+
+    <div class="v">
+
+      Small business owners — shop owners, service providers, freelancers — get the same handful of questions from customers every day: prices, working hours, availability, location. Answering each one by hand eats into hours that could go toward actual work, and a slow reply can cost a customer who moves on to a competitor.
+
+    </div>
+
+  </div>
+
+
+  <div class="block">
+
+    <div class="k">
+      THE APPROACH
+    </div>
+
+    <div class="v">
+
+      I built a Python bot that reads incoming messages, matches them against a business's most common questions using keyword detection, and replies instantly with accurate, pre-approved answers. Anything it doesn't recognize is flagged for the owner to answer personally — so every customer still gets a real answer, just faster.
+
+    </div>
+
+  </div>
+
+
+  <div class="block">
+
+    <div class="k">
+      MANUAL VS. AUTOMATED
+    </div>
+
 
     <div class="flow">
 
+
       <div class="flow-col">
 
         <div class="flabel">
-          INPUT
+          BEFORE — MANUAL, PER CUSTOMER
         </div>
+
 
         <div class="flow-steps">
 
           <div class="flow-step">
-            Business Data
+            Customer sends a question
           </div>
 
           <div class="flow-step">
-            Excel / CSV Files
+            Owner reads it, mid-task
           </div>
 
           <div class="flow-step">
-            Online Sources
+            Owner searches for the answer
+          </div>
+
+          <div class="flow-step">
+            Owner types out a reply
+          </div>
+
+          <div class="flow-step">
+            Repeat for every customer, every day
           </div>
 
         </div>
@@ -1240,49 +1658,28 @@
       </div>
 
 
-      <div class="flow-col">
-
-        <div class="flabel">
-          AUTOMATION
-        </div>
-
-        <div class="flow-steps">
-
-          <div class="flow-step win">
-            Data Collection
-          </div>
-
-          <div class="flow-step win">
-            Data Processing
-          </div>
-
-          <div class="flow-step win">
-            Validation
-          </div>
-
-        </div>
-
-      </div>
+      <div class="flow-divider"></div>
 
 
       <div class="flow-col">
 
         <div class="flabel">
-          OUTPUT
+          AFTER — AUTOMATED
         </div>
+
 
         <div class="flow-steps">
 
           <div class="flow-step">
-            Clean Data
+            Customer sends a question
+          </div>
+
+          <div class="flow-step win">
+            Bot replies instantly, 24/7
           </div>
 
           <div class="flow-step">
-            Automated Reports
-          </div>
-
-          <div class="flow-step">
-            Business Insights
+            Owner only steps in for the unusual ones
           </div>
 
         </div>
@@ -1291,202 +1688,304 @@
 
     </div>
 
+  </div>
 
-    <div class="toolrow">
 
-      <span class="tag">Python</span>
-      <span class="tag">Automation</span>
-      <span class="tag">Web Scraping</span>
-      <span class="tag">CSV / Excel</span>
-      <span class="tag">APIs</span>
+  <div class="block">
+
+    <div class="k">
+      STATUS
+    </div>
+
+    <div class="v">
+
+      Built and tested as a training project on the DEPI Automation track. Ready to be adapted to a real business's own FAQs, tone, and platform — WhatsApp, Instagram, or email.
 
     </div>
 
+  </div>
 
-    <div class="next">
 
-      <h3>
-        Possible Extensions
-      </h3>
+  <div class="next">
 
-      <div class="nextrow">
+    <h3>
+      What I'm building next
+    </h3>
 
-        <div class="nextitem">
 
-          <div class="t">
-            Notifications
-          </div>
+    <div class="nextrow">
 
-          <div class="s">
-            Automatically send completed reports and important alerts.
-          </div>
 
+      <div class="nextitem">
+
+        <div class="t">
+          Excel Report Automation
         </div>
 
-        <div class="nextitem">
-
-          <div class="t">
-            Database Integration
-          </div>
-
-          <div class="s">
-            Store and synchronize business data automatically.
-          </div>
-
+        <div class="s">
+          A script that turns raw sales or order sheets into a ready-made weekly report.
         </div>
 
-        <div class="nextitem">
-
-          <div class="t">
-            AI Integration
-          </div>
-
-          <div class="s">
-            Add AI-powered classification, summaries, and decision support.
-          </div>
-
+        <div class="st">
+          IN PROGRESS
         </div>
 
       </div>
 
+
+      <div class="nextitem">
+
+        <div class="t">
+          Web Data Collector
+        </div>
+
+        <div class="s">
+          Automatically pulling public data (like competitor prices) instead of checking it by hand.
+        </div>
+
+        <div class="st">
+          PLANNED
+        </div>
+
+      </div>
+
+
     </div>
 
-
-    <div class="page-footer">
-      <span>Marwan Ali Sabry — Portfolio</span>
-      <span>Page 04</span>
-    </div>
-
-  </section>
+  </div>
 
 
-  <!-- ============ PAGE 5: CONTACT ============ -->
+  <div class="page-footer">
 
-  <section class="page" id="contact">
+    <span>
+      Marwan Ali Sabry — Portfolio
+    </span>
 
-    <div class="mid">
+    <span>
+      04
+    </span>
 
-      <span class="kicker">
-        LET'S WORK TOGETHER
+  </div>
+
+</section>
+
+
+
+<!-- ========================================================= -->
+<!-- PAGE 5: CONTACT -->
+<!-- ========================================================= -->
+
+<section class="page" id="contact">
+
+
+  <div>
+
+    <div class="running-header">
+
+      <span class="name">
+        Marwan Ali Sabry
       </span>
 
-      <h2>
-        Turn Repetitive Work Into Automated Workflows.
-      </h2>
+      <span>
+        Get in Touch
+      </span>
 
-      <p class="lead">
-        If your business has a repetitive process that consumes time every day, I can help analyze the workflow and build a practical automation solution around it.
-      </p>
+    </div>
 
-
-      <div class="steps">
-
-        <div class="label">
-          HOW WE START
-        </div>
-
-        <div class="steprow">
-
-          <div class="step">
-
-            <div class="sn">
-              01
-            </div>
-
-            <div class="st">
-
-              <b>
-                Describe the Process
-              </b>
-
-              <span>
-                Tell me what your team currently does manually.
-              </span>
-
-            </div>
-
-          </div>
+  </div>
 
 
-          <div class="step">
-
-            <div class="sn">
-              02
-            </div>
-
-            <div class="st">
-
-              <b>
-                Identify Opportunities
-              </b>
-
-              <span>
-                We map the repetitive steps and identify what can be automated.
-              </span>
-
-            </div>
-
-          </div>
+  <div class="mid">
 
 
-          <div class="step">
+    <div class="kicker">
+      04 — GET IN TOUCH
+    </div>
 
-            <div class="sn">
-              03
-            </div>
 
-            <div class="st">
+    <h2>
+      Let's automate your busywork.
+    </h2>
 
-              <b>
-                Build the Solution
-              </b>
 
-              <span>
-                I develop and test a custom automation workflow for your needs.
-              </span>
+    <div
+      class="rule wide"
+      style="margin-top:10px;"
+    ></div>
 
-            </div>
 
-          </div>
+    <p class="lead">
 
-        </div>
+      If there's a task in your business that you handle the same way, every single day, there's a good chance it can be automated. Tell me what's eating your time, and let's see if a simple script can give it back to you.
 
+    </p>
+
+
+    <div class="steps">
+
+      <div class="label">
+        HOW WE'D WORK TOGETHER
       </div>
 
 
-      <div class="cta-block">
+      <div class="steprow">
 
-        <div>
 
-          <div class="label2">
-            Ready to automate?
+        <div class="step">
+
+          <div class="sn">
+            1
           </div>
 
-          <div class="row">
-            <b>Email:</b> marwanali3578@gmail.com
-          </div>
+          <div class="st">
 
-          <div class="row">
-            <b>Location:</b> Egypt
+            <b>
+              Message me
+            </b>
+
+            <span>
+              Tell me about the task that's taking up your time.
+            </span>
+
           </div>
 
         </div>
 
-        <div>
-          Python • Automation • AI
+
+        <div class="step">
+
+          <div class="sn">
+            2
+          </div>
+
+          <div class="st">
+
+            <b>
+              We scope it
+            </b>
+
+            <span>
+              A short, free conversation to see if automation is a fit.
+            </span>
+
+          </div>
+
         </div>
+
+
+        <div class="step">
+
+          <div class="sn">
+            3
+          </div>
+
+          <div class="st">
+
+            <b>
+              I build &amp; hand it off
+            </b>
+
+            <span>
+              Tested, explained in plain terms, and ready to use.
+            </span>
+
+          </div>
+
+        </div>
+
 
       </div>
 
     </div>
 
 
-    <div class="page-footer">
-      <span>Marwan Ali Sabry — Portfolio</span>
-      <span>Page 05</span>
+    <div class="why">
+
+      <div class="label">
+        WHY WORK WITH ME
+      </div>
+
+
+      <ul class="plain">
+
+        <li>
+          Direct communication — you talk to the person actually writing your automation, start to finish.
+        </li>
+
+        <li>
+          Plain, no-jargon explanations of what the script does and why.
+        </li>
+
+        <li>
+          Early-career pricing — I'm building my portfolio, and it shows in the rate.
+        </li>
+
+      </ul>
+
     </div>
 
-  </section>
+
+  </div>
+
+
+  <div class="cta-block">
+
+
+    <div>
+
+      <div class="row">
+
+        <span class="label2">
+          Marwan Ali Sabry
+        </span>
+
+      </div>
+
+
+      <div class="row">
+
+        <b>
+          Email&nbsp;
+        </b>
+
+        marwan.elbaz10@gmail.com
+
+      </div>
+
+    </div>
+
+
+    <div>
+
+      <div class="row">
+
+        <b>
+          Phone&nbsp;
+        </b>
+
+        01065073310
+
+      </div>
+
+
+      <div class="row">
+
+        <b>
+          LinkedIn&nbsp;
+        </b>
+
+        linkedin.com/in/marwan-ali-b77363386
+
+      </div>
+
+    </div>
+
+
+  </div>
+
+
+</section>
+
 
 </body>
 </html>
