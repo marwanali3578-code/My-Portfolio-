@@ -219,17 +219,9 @@
   }
 
   /* ================= PAGE 2 — ABOUT ================= */
-  #about h2{ font-size: 27px; margin-top: 10px; }
+  #about h2{ font-size: 27px; margin-top: 6px; }
 
-  .about-head{ display:flex; align-items:center; gap: 18px; flex-wrap: wrap; }
-  .headshot{
-    width: 80px; height: 80px; flex: none; border-radius: 50%;
-    border: 2px solid var(--brass); padding: 3px; overflow: hidden;
-  }
-  .headshot img{
-    width:100%; height:100%; object-fit: cover; border-radius: 50%; display:block;
-  }
-  .about-head h2{ margin-top:0; }
+  .about-head{ display:flex; flex-direction:column; gap: 4px; }
   #about .lead{
     margin-top: 16px;
     font-size: 13.5px;
@@ -431,9 +423,6 @@
     </div>
 
     <div class="about-head">
-      <div class="headshot">
-        <img src="IMG-20260510-WA0020.jpg" alt="Marwan Ali Sabry">
-      </div>
       <div>
         <span class="kicker">BACKGROUND & PHILOSOPHY</span>
         <h2>Bridge the Gap Between Manual Labor & Automation</h2>
@@ -567,129 +556,4 @@
   <section class="page" id="project">
     <div class="running-header">
       <span class="name">MARWAN ALI SABRY</span>
-      <span>FEATURED PROJECT</span>
-    </div>
-
-    <span class="kicker">CASE STUDY</span>
-    <h2>Automated Business Data Pipeline</h2>
-    <div class="ptitle">Python Automation for Operational Efficiency</div>
-
-    <div class="block">
-      <div class="k">THE PROBLEM</div>
-      <div class="v">A business spent over 2 hours every evening manually consolidating daily orders, cross-checking stock files, and generating invoice reports in Excel—causing frequent errors and administrative burnout.</div>
-    </div>
-
-    <div class="block">
-      <div class="k">THE SOLUTION</div>
-      <div class="v">Developed an automated Python engine that reads raw order exports, updates inventory records in real time, generates PDF invoices, and emails summary metrics directly to management.</div>
-    </div>
-
-    <div class="flow">
-      <div class="flow-col">
-        <div class="flabel">BEFORE (MANUAL)</div>
-        <div class="flow-steps">
-          <div class="flow-step">1. Download CSVs manually</div>
-          <div class="flow-step">2. Copy & paste rows in Excel</div>
-          <div class="flow-step">3. Calculate totals by hand</div>
-          <div class="flow-step">4. Send emails one by one</div>
-        </div>
-      </div>
-      <div class="flow-col">
-        <div class="flabel">AFTER (AUTOMATED)</div>
-        <div class="flow-steps">
-          <div class="flow-step win">1. Script fetches raw data</div>
-          <div class="flow-step win">2. Python cleans & validates</div>
-          <div class="flow-step win">3. Instant database update</div>
-          <div class="flow-step win">4. Automated PDF & email alert</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="toolrow">
-      <span class="tag">Python</span>
-      <span class="tag">Pandas</span>
-      <span class="tag">OpenPyXL</span>
-      <span class="tag brass">100% Time Saved</span>
-    </div>
-
-    <div class="next">
-      <h3>Key Outcomes</h3>
-      <div class="nextrow">
-        <div class="nextitem">
-          <div class="t">Zero Human Error</div>
-          <div class="s">Eliminated manual formula mistakes and missing data entries completely.</div>
-        </div>
-        <div class="nextitem">
-          <div class="t">2+ Hours Saved Daily</div>
-          <div class="s">Reduced a 120-minute daily task into a 5-second background execution.</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="page-footer">
-      <span>Marwan Ali Sabry — Portfolio</span>
-      <span>Page 04</span>
-    </div>
-  </section>
-
-  <!-- ============ PAGE 5: CONTACT ============ -->
-  <section class="page" id="contact">
-    <div class="running-header">
-      <span class="name">MARWAN ALI SABRY</span>
-      <span>CONTACT & COLLABORATION</span>
-    </div>
-
-    <div class="mid">
-      <span class="kicker">LET'S TALK</span>
-      <h2>Ready to Automate Your Manual Workflows?</h2>
-      <p class="lead">
-        Whether you need a script to handle tedious spreadsheets, extract valuable web data, or automate client reporting, I am ready to build a reliable solution tailored for your business.
-      </p>
-
-      <div class="steps">
-        <div class="label">WORKING TOGETHER IS EASY</div>
-        <div class="steprow">
-          <div class="step">
-            <div class="sn">01</div>
-            <div class="st">
-              <b>Share Your Process</b>
-              <span>Send me a quick description of the manual task taking up your time.</span>
-            </div>
-          </div>
-          <div class="step">
-            <div class="sn">02</div>
-            <div class="st">
-              <b>Get a Solution Plan</b>
-              <span>I'll analyze the task and propose a custom Python automation pipeline.</span>
-            </div>
-          </div>
-          <div class="step">
-            <div class="sn">03</div>
-            <div class="st">
-              <b>Execution & Delivery</b>
-              <span>Receive a tested, easy-to-run tool with ongoing support.</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="cta-block">
-      <div>
-        <div class="label2">Get in touch directly:</div>
-        <div class="row"><b>Email:</b> marwanali3578@gmail.com</div>
-        <div class="row"><b>Location:</b> Egypt</div>
-      </div>
-      <div>
-        <span class="tag brass">Available for Hire & Projects</span>
-      </div>
-    </div>
-
-    <div class="page-footer">
-      <span>Marwan Ali Sabry — Portfolio</span>
-      <span>Page 05</span>
-    </div>
-  </section>
-
-</body>
-</html>
+      <span>FEATURED PROJECT</span
